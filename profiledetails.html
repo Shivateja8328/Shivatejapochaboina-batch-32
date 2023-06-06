@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Details</title>
+  <style>
+    body {
+      background-image: url("new.jpg"));
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+    }
+
+    form {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #profileResult {
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <form id="newprofile">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"><br><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber"><br><br>
+
+    <input type="submit" value="Submit" onclick="newprofiledetails(event)">
+  </form>
+
+  <div id="profileResult"></div>
+
+  <script>
+    function newprofiledetails(event) {
+      event.preventDefault();
+
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var dob = document.getElementById("dob").value;
+      var email = document.getElementById("email").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+
+      var mydetails = document.getElementById("profileResult");
+      mydetails.innerHTML = "<h2>User Profile Information:</h2>" +
+                            "<p>First Name: " + firstName + "</p>" +
+                            "<p>Last Name: " + lastName + "</p>" +
+                            "<p>Date of Birth: " + dob + "</p>" +
+                            "<p>Email: " + email + "</p>" +
+                            "<p>Phone Number: " + phoneNumber + "</p>";
+    }
+  </script>
+</body>
+</html>
